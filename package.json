@@ -1,38 +1,49 @@
 {
-  "name": "extension",
-  "version": "1.0.0",
+  "name": "@movie-web/extension",
+  "displayName": "movie-web extension",
+  "version": "0.0.1",
   "description": "movie-web extension, allows providers to work without proxy",
-  "main": "index.js",
-  "type": "module",
+  "author": "movie-web",
   "scripts": {
-    "build": "vite build",
-    "build:firefox": "vite build",
-    "build:chrome": "vite build",
-    "test": "vitest run",
+    "dev": "plasmo dev",
+    "build": "plasmo build",
+    "package": "plasmo package",
     "lint": "eslint --ext .tsx,.ts src",
     "lint:fix": "eslint --fix --ext .tsx,.ts src",
     "lint:report": "eslint --ext .tsx,.ts --output-file eslint_report.json --format json src",
     "preinstall": "npx -y only-allow pnpm"
   },
-  "keywords": [],
-  "author": "movie-web",
-  "license": "MIT",
   "dependencies": {
-    "vite": "^5.0.10"
+    "@plasmohq/messaging": "^0.6.1",
+    "@plasmohq/storage": "^1.9.0",
+    "plasmo": "0.84.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@types/chrome": "^0.0.254",
-    "@types/lodash.merge": "^4.6.9",
-    "@types/node": "^20.10.5",
+    "@types/chrome": "0.0.251",
+    "@types/node": "20.9.0",
+    "@types/react": "18.2.37",
+    "@types/react-dom": "18.2.15",
     "@typescript-eslint/eslint-plugin": "^6.15.0",
     "@typescript-eslint/parser": "^6.15.0",
     "eslint": "^8.56.0",
-    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-prettier": "^5.1.1",
-    "lodash.merge": "^4.6.2",
-    "vite-plugin-static-copy": "^1.0.0"
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "3.0.3",
+    "typescript": "5.2.2"
+  },
+  "manifest": {
+    "permissions": [
+      "declarativeNetRequest"
+    ],
+    "host_permissions": [
+      "<all_urls>"
+    ]
   }
 }
